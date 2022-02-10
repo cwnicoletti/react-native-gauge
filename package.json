@@ -1,25 +1,27 @@
 {
-    "private": true,
-    "workspaces": ["src", "example"],
-    "scripts": {
-      "validate:eslint": "eslint src example",
-      "validate:flow": "flow check src",
-      "test:jest": "jest src",
-      "test": "yarn validate:eslint && yarn validate:flow && yarn test:jest"
-    },
-    "jest": {
-      "preset": "react-native",
-      "verbose": true,
-      "modulePathIgnorePatterns": [
-        "/e2e/"
-      ]
-    },
-    "prettier": {
-      "singleQuote": true,
-      "trailingComma": "all",
-      "bracketSpacing": false,
-      "jsxBracketSameLine": true,
-      "parser": "flow"
-    }
+  "private": true,
+  "workspaces": [
+    "src",
+    "examples"
+  ],
+  "scripts": {
+    "validate:eslint": "eslint src example",
+    "validate:flow": "flow check src",
+    "test:jest": "jest src",
+    "test": "yarn validate:eslint && yarn validate:flow && yarn test:jest"
+  },
+  "jest": {
+    "preset": "react-native",
+    "verbose": true,
+    "modulePathIgnorePatterns": [
+      "/e2e/"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "jsxBracketSameLine": true,
+    "parser": "flow"
   }
-  
+}
