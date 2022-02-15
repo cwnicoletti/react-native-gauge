@@ -1,6 +1,6 @@
 {
   "name": "react-native-gauge",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "cwnicoletti",
   "homepage": "https://github.com/cwnicoletti/react-native-gauge#readme",
@@ -16,7 +16,8 @@
     "gauge"
   ],
   "scripts": {
-    "prepare": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset"
+    "prepare": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset",
+    "prepare-publish": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish"
   },
   "peerDependencies": {
     "react": "*",
