@@ -1,17 +1,17 @@
 /* @flow */
 
 import renderer from 'react-test-renderer';
-import Speedometer from '../Speedometer';
+import Gauge from '../Gauge';
 
-describe('<Speedometer />', () => {
+describe('<Gauge />', () => {
   it('renders enabled speedometer', () => {
-    const tree = renderer.create(<Speedometer />).toJSON();
+    const tree = renderer.create(<Gauge />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
   it('renders a speedometer with custom props', () => {
-    const tree = renderer.create(<Speedometer size={40} />).toJSON();
+    const tree = renderer.create(<Gauge size={40} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

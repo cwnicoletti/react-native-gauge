@@ -17,7 +17,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 const CIRCLE = Math.PI * 2;
 
-const Speedometer = props => {
+const Gauge = props => {
   const style = StyleSheet.compose(
     styles.arc,
     props.style,
@@ -242,7 +242,7 @@ const Speedometer = props => {
   );
 };
 
-Speedometer.defaultProps = {
+Gauge.defaultProps = {
   size: 30,
   progress: 0.5,
   overallGradient: false,
@@ -288,4 +288,4 @@ if (Platform.OS === 'ios') {
   });
 }
 
-export default Speedometer;
+export default Gauge;
