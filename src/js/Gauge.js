@@ -1,4 +1,4 @@
-// Needed for babel compile
+// React specifically needed for babel compile
 import React, {useRef} from 'react';
 
 import {Animated, Platform, StyleSheet, View} from 'react-native';
@@ -7,13 +7,6 @@ import MaskedView from '@react-native-masked-view/masked-view';
 import {withAnchorPoint} from 'react-native-anchor-point';
 import useDidMountEffect from '../helper/useDidMountEffect';
 import {LinearGradient} from 'expo-linear-gradient';
-
-// import {ViewPropTypes} from 'react-native';
-
-// type Props = Readonly<{
-//   style?: typeof ViewPropTypes.style,
-//   size?: number,
-// }>;
 
 const CIRCLE = Math.PI * 2;
 
