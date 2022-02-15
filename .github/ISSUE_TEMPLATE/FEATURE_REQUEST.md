@@ -1,6 +1,6 @@
 ---
 name: 🗣 Feature request
-about: Request a React Native Slider feature.
+about: Request a React Native Gauge feature.
 labels: 'feature request'
 ---
 

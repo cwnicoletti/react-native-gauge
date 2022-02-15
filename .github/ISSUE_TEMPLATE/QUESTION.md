@@ -1,6 +1,6 @@
 ---
 name: 💬 Question
-about: You need to ask a question about React Native Slider.
+about: You need to ask a question about React Native Gauge.
 labels: 'question'
 ---
 

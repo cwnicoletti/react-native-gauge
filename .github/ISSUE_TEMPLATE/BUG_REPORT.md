@@ -1,6 +1,6 @@
 ---
 name: 🐛 Report a bug
-about: Report a reproducible or regression bug in React Native Slider.'
+about: Report a reproducible or regression bug in React Native Gauge.'
 labels: 'bug report'
 ---
 
