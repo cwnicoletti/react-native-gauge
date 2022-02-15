@@ -1,9 +1,12 @@
 // Needed for babel compile
-import React, {useEffect, useRef} from 'react';
+import React, {useRef} from 'react';
 
-import {Animated, Platform, StyleSheet} from 'react-native';
+import {Animated, Platform, StyleSheet, View} from 'react-native';
 import * as Progress from 'react-native-progress';
+import MaskedView from '@react-native-masked-view/masked-view';
 import {withAnchorPoint} from 'react-native-anchor-point';
+import useDidMountEffect from '../helper/useDidMountEffect';
+import {LinearGradient} from 'expo-linear-gradient';
 
 // import {ViewPropTypes} from 'react-native';
 
@@ -12,68 +15,276 @@ import {withAnchorPoint} from 'react-native-anchor-point';
 //   size?: number,
 // }>;
 
-const Speedometer = (props) => {
-  // const style = StyleSheet.compose(
-  //   styles.speedometer,
-  //   props.style,
-  // );
+const CIRCLE = Math.PI * 2;
 
-  const {progress, animated, size, needlePointerWidth} = props;
+const Speedometer = props => {
+  const style = StyleSheet.compose(
+    styles.arc,
+    props.style,
+  );
+
+  const {
+    size,
+    progress,
+    animated,
+    overallGradient,
+    addTriangleTip,
+    triangleTipWidth,
+    triangleTipHeight,
+    triangleNeedle,
+    addCircle,
+    circleSize,
+    alwaysUseEndAngle,
+    endAngle,
+    unfilledEndAngle,
+    rotate,
+    thickness,
+    borderWidth,
+    needleWidth,
+    needleHeight,
+    needleBorderRadius,
+    translateNeedleY,
+    color,
+    borderColor,
+    needleColor,
+    unfilledColor,
+    circleColor,
+    triangleTipColor,
+  } = props;
 
   const prevCountRef = useRef();
-  useEffect(() => {
-    prevCountRef.current = progress;
-    moveNeedleFn();
-  }, [progress]);
+  useDidMountEffect(() => {
+    if (animated) {
+      prevCountRef.current = progress * CIRCLE * unfilledEndAngle;
+      moveNeedleFn();
+    }
+  }, [progress, unfilledEndAngle]);
 
-  const moveNeedle = useRef(new Animated.Value(0)).current;
+  const moveNeedle = useRef(
+    new Animated.Value(progress * CIRCLE * unfilledEndAngle),
+  ).current;
 
   const moveNeedleFn = () => {
     Animated.spring(moveNeedle, {
-      toValue: progress * 6.28,
+      toValue: progress * CIRCLE * unfilledEndAngle,
       bounciness: 0,
       useNativeDriver: true,
     }).start();
   };
 
   return (
-    <Progress.Circle
-      size={props.size ? props.size : 30}
-      progress={props.progress ? props.progress : 0}
-      thickness={props.thickness}
-      color={props.color}
-      borderWidth={props.borderWidth}
-      style={{alignItems: 'center', transform: [{rotate: '180deg'}]}}>
-      <Animated.View
-        style={[
-          {
-            position: 'absolute',
-            width: needlePointerWidth,
-            height: size / 2,
-            backgroundColor: 'blue',
-          },
-          withAnchorPoint(
-            {transform: [{rotateZ: moveNeedle}]},
-            {x: 0.5, y: 1},
-            {width: needlePointerWidth, height: size / 2},
-          ),
-        ]}
-      />
-    </Progress.Circle>
+    <View>
+      {overallGradient ? (
+        <View
+          style={{
+            height: size,
+            width: size,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <MaskedView
+            maskElement={
+              <Progress.Circle
+                size={size}
+                progress={progress}
+                alwaysUseEndAngle={alwaysUseEndAngle}
+                endAngle={endAngle}
+                unfilledEndAngle={unfilledEndAngle}
+                thickness={thickness}
+                borderWidth={borderWidth}
+                color={color}
+                borderColor={borderColor}
+                unfilledColor={unfilledColor}
+                indeterminate={false}
+                style={{...style, transform: [{rotate: rotate}]}}>
+                <Animated.View
+                  style={[
+                    {
+                      position: 'absolute',
+                      width: triangleNeedle ? 0 : needleWidth,
+                      height: triangleNeedle ? 0 : needleHeight,
+                      top: size / 2 - needleHeight - translateNeedleY / 2,
+                      borderTopWidth: 0,
+                      borderLeftWidth: triangleNeedle ? needleWidth : 0,
+                      borderRightWidth: triangleNeedle ? needleWidth : 0,
+                      borderBottomWidth: triangleNeedle ? needleHeight : 0,
+                      backgroundColor: triangleNeedle
+                        ? 'transparent'
+                        : needleColor,
+                      borderRadius: triangleNeedle ? 0 : needleBorderRadius,
+                      borderStyle: 'solid',
+                      borderLeftColor: 'transparent',
+                      borderRightColor: 'transparent',
+                      borderBottomColor: needleColor,
+                    },
+                    withAnchorPoint(
+                      {transform: [{rotateZ: moveNeedle}]},
+                      {x: 0.5, y: 1},
+                      {
+                        width: needleWidth,
+                        height: needleHeight + translateNeedleY,
+                      },
+                    ),
+                  ]}>
+                  {addTriangleTip && (
+                    <View
+                      style={{
+                        alignSelf: 'center',
+                        top: -triangleTipHeight,
+                        borderTopWidth: 0,
+                        borderStyle: 'solid',
+                        borderLeftColor: 'transparent',
+                        borderRightColor: 'transparent',
+                        borderBottomColor: triangleTipColor,
+                        borderLeftWidth: triangleTipWidth,
+                        borderRightWidth: triangleTipWidth,
+                        borderBottomWidth: triangleTipHeight,
+                      }}
+                    />
+                  )}
+                </Animated.View>
+                {addCircle && (
+                  <Animated.View
+                    style={{
+                      position: 'absolute',
+                      height: circleSize,
+                      width: circleSize,
+                      borderRadius: circleSize / 2,
+                      backgroundColor: circleColor,
+                      transform: [{rotateZ: moveNeedle}],
+                    }}
+                  />
+                )}
+              </Progress.Circle>
+            }>
+            <LinearGradient
+              colors={overallGradient}
+              style={{
+                height: size,
+                width: size,
+              }}
+            />
+          </MaskedView>
+        </View>
+      ) : (
+        <Progress.Circle
+          size={size}
+          progress={progress}
+          alwaysUseEndAngle={alwaysUseEndAngle}
+          endAngle={endAngle}
+          unfilledEndAngle={unfilledEndAngle}
+          thickness={thickness}
+          borderWidth={borderWidth}
+          color={color}
+          borderColor={borderColor}
+          unfilledColor={unfilledColor}
+          indeterminate={false}
+          style={{...style, transform: [{rotate: rotate}]}}>
+          <Animated.View
+            style={[
+              {
+                position: 'absolute',
+                width: triangleNeedle ? 0 : needleWidth,
+                height: triangleNeedle ? 0 : needleHeight,
+                top: size / 2 - needleHeight - translateNeedleY / 2,
+                borderTopWidth: 0,
+                borderLeftWidth: triangleNeedle ? needleWidth : 0,
+                borderRightWidth: triangleNeedle ? needleWidth : 0,
+                borderBottomWidth: triangleNeedle ? needleHeight : 0,
+                backgroundColor: triangleNeedle ? 'transparent' : needleColor,
+                borderRadius: triangleNeedle ? 0 : needleBorderRadius,
+                borderStyle: 'solid',
+                borderLeftColor: 'transparent',
+                borderRightColor: 'transparent',
+                borderBottomColor: needleColor,
+              },
+              withAnchorPoint(
+                {transform: [{rotateZ: moveNeedle}]},
+                {x: 0.5, y: 1},
+                {
+                  width: needleWidth,
+                  height: needleHeight + translateNeedleY,
+                },
+              ),
+            ]}>
+            {addTriangleTip && (
+              <View
+                style={{
+                  alignSelf: 'center',
+                  top: -triangleTipHeight,
+                  borderTopWidth: 0,
+                  borderStyle: 'solid',
+                  borderLeftColor: 'transparent',
+                  borderRightColor: 'transparent',
+                  borderBottomColor: triangleTipColor,
+                  borderLeftWidth: triangleTipWidth,
+                  borderRightWidth: triangleTipWidth,
+                  borderBottomWidth: triangleTipHeight,
+                }}
+              />
+            )}
+          </Animated.View>
+          {addCircle && (
+            <Animated.View
+              style={{
+                position: 'absolute',
+                height: circleSize,
+                width: circleSize,
+                borderRadius: circleSize / 2,
+                backgroundColor: circleColor,
+                transform: [{rotateZ: moveNeedle}],
+              }}
+            />
+          )}
+        </Progress.Circle>
+      )}
+    </View>
   );
 };
 
-let styles;
+Speedometer.defaultProps = {
+  size: 30,
+  progress: 0.5,
+  overallGradient: false,
+  addTriangleTip: false,
+  triangleTipWidth: 2,
+  triangleTipHeight: 4,
+  triangleNeedle: false,
+  addCircle: false,
+  circleSize: 15,
+  animated: true,
+  alwaysUseEndAngle: true,
+  endAngle: 0.9,
+  unfilledEndAngle: 0.9,
+  rotate: '-90deg',
+  thickness: 6,
+  borderWidth: 1,
+  needleWidth: 2,
+  needleHeight: 45,
+  needleBorderRadius: 0,
+  translateNeedleY: 0,
+  color: 'blue',
+  borderColor: 'blue',
+  needleColor: 'blue',
+  unfilledColor: 'grey',
+  circleColor: 'blue',
+  triangleTipColor: 'blue',
+};
 
+let styles;
 if (Platform.OS === 'ios') {
   styles = StyleSheet.create({
-    speedometer: {
-      height: 40,
+    arc: {
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   });
 } else {
   styles = StyleSheet.create({
-    speedometer: {},
+    arc: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
   });
 }
 
