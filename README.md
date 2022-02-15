@@ -2,6 +2,12 @@
   <h1 align="center"> <code>react-native-gauge</code> </h1>
 </p>
 <p align="center">
+    <a href="https://www.npmjs.com/package/@react-native-community/slider">
+        <img src="https://img.shields.io/npm/v/react-native-gauge" alt="Latest version released on npmjs" />
+    </a>
+    <a href="https://github.com/callstack/react-native-slider">
+        <img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Supported platforms" />
+    </a>
     <a href="https://github.com/cwnicoletti/react-native-gauge/blob/main/LICENSE">
         <img src="https://img.shields.io/npm/l/@react-native-community/slider.svg" alt="License" />
     </a>
@@ -15,8 +21,35 @@
 <p align="center">
   <img width=300 src="https://user-images.githubusercontent.com/56566033/153973217-a1f4cc50-a53b-4946-8d1f-0403fe018e64.gif" alt="gauge gif" />
  </p>
+ 
+ 
+## Installation & Usage
 
-### Properties
+To install this module `cd` to your project directory and enter the following command:
+```
+npm install react-native-gauge
+```
+
+The following code presents the basic usage scenario of this library:
+```javascript
+import Gauge from "react-native-gauge";
+
+<Gauge
+  size={75}
+  progress={0.5}
+  animated={true}
+  alwaysUseEndAngle={true}
+  endAngle={0}
+  unfilledEndAngle={0.5}
+  thickness={4}
+  borderWidth={1}
+  needleWidth={3}
+  needleHeight={20}
+  needleBorderRadius={25}
+/>
+```
+
+## Properties
 
 | Prop                                 | Description                                                                  | Default                |
 | ------------------------------------ | ---------------------------------------------------------------------------- | ---------------------- |
