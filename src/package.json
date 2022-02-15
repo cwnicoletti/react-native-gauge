@@ -48,6 +48,8 @@
     "url": "https://github.com/cwnicoletti/react-native-speedometer.git"
   },
   "dependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.6",
+    "expo-linear-gradient": "^11.0.3",
     "react-native-anchor-point": "^1.0.6",
     "react-native-progress": "^5.0.0",
     "react-native-svg": "^12.1.1"
