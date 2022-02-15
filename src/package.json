@@ -1,19 +1,19 @@
 {
-  "name": "react-native-speedometer",
+  "name": "react-native-gauge",
   "version": "0.0.1",
   "license": "MIT",
   "author": "cwnicoletti",
-  "homepage": "https://github.com/cwnicoletti/react-native-speedometer#readme",
-  "description": "React Native component used to display a speedometer for metrics or purely aesthetic purposes ",
+  "homepage": "https://github.com/cwnicoletti/react-native-gauge#readme",
+  "description": "React Native component used to display a gauge for metrics or purely aesthetic purposes ",
   "publishConfig": {
     "access": "public"
   },
-  "main": "js/Speedometer.js",
+  "main": "js/Gauge.js",
   "types": "typings/index.d.ts",
   "keywords": [
     "react-native",
     "react native",
-    "speedometer"
+    "gauge"
   ],
   "scripts": {
     "prepare": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset"
@@ -45,13 +45,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cwnicoletti/react-native-speedometer.git"
+    "url": "https://github.com/cwnicoletti/react-native-gauge.git"
   },
   "dependencies": {
     "@react-native-masked-view/masked-view": "^0.2.6",
     "expo-linear-gradient": "^11.0.3",
     "react-native-anchor-point": "^1.0.6",
-    "react-native-progress": "^5.0.0",
+    "react-native-progress": "github:cwnicoletti/react-native-progress",
     "react-native-svg": "^12.1.1"
   }
 }
