@@ -47,10 +47,10 @@ jobs:
           command: cd src; yarn install; cd ../example; yarn install --force --frozen-lockfile
       - run:
           name: "Restore NuGet packages for Components"
-          command: nuget restore .\example\windows\SpeedometerTestWindows.sln
+          command: nuget restore .\example\windows\GaugeTestWindows.sln
       - run:
           name: "Restore .NET dependencies"
-          command: msbuild -t:restore .\example\windows\SpeedometerTestWindows.sln
+          command: msbuild -t:restore .\example\windows\GaugeTestWindows.sln
       - run:
           name: Build example Windows
           command: cd example; npx react-native run-windows --no-packager --no-launch --arch x64 --logging --no-deploy
