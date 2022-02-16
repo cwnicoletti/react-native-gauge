@@ -67,6 +67,3 @@ src/dist
 # Expo
 .expo
 web-build
-
-# Misc
-package-lock.json
