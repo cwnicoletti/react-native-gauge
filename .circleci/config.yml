@@ -1,15 +1,13 @@
 version: 2.1
-orbs:
-  node: circleci/node@5.0.0
 jobs:
- build:
-    docker:
-      - image: 'cimg/base:stable'
+  build:
     working_directory: ~/repo
+    docker:
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - node/install:
-          install-yarn: true
+          install-yarn: false
           node-version: '16.13'
       - run: node --version
       - run:
