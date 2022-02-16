@@ -1,5 +1,5 @@
 {
-    "extends": "@react-native-community",
+    "extends": ["@react-native-community"],
     "env": {
       "es6": true,
       "jest": true
@@ -16,5 +16,17 @@
       "afterAll": true,
       "jest": true,
       "jasmine": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
     }
   }

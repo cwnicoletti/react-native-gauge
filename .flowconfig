@@ -14,6 +14,8 @@
 ; Flow doesn't support platforms
 .*/Libraries/Utilities/HMRLoadingView.js
 
+.*/node_modules/.*
+
 [untyped]
 .*/node_modules/@react-native-community/cli/.*/.*
 
@@ -64,4 +66,4 @@ untyped-import
 untyped-type-import
 
 [version]
-^0.163.0
+0.171.0
