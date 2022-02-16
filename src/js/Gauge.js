@@ -1,4 +1,3 @@
-// React specifically needed for babel compile
 import React, {useRef} from 'react';
 
 import {Animated, Platform, StyleSheet, View} from 'react-native';
@@ -10,11 +9,8 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 const CIRCLE = Math.PI * 2;
 
-const Gauge = props => {
-  const style = StyleSheet.compose(
-    styles.arc,
-    props.style,
-  );
+const Gauge = (props) => {
+  const style = StyleSheet.compose(styles.arc, props.style);
 
   const {
     size,
@@ -70,10 +66,9 @@ const Gauge = props => {
       {overallGradient ? (
         <View
           style={{
+            ...styles.maskContainer,
             height: size,
             width: size,
-            justifyContent: 'center',
-            alignItems: 'center',
           }}>
           <MaskedView
             maskElement={
@@ -271,12 +266,20 @@ if (Platform.OS === 'ios') {
       alignItems: 'center',
       justifyContent: 'center',
     },
+    maskContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   });
 } else {
   styles = StyleSheet.create({
     arc: {
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    maskContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   });
 }
