@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  node: circleci/node@5.0.0
 jobs:
   build:
     working_directory: ~/repo
@@ -7,7 +9,7 @@ jobs:
     steps:
       - checkout
       - node/install:
-          install-yarn: false
+          install-yarn: true
           node-version: '16.13'
       - run: node --version
       - run:
