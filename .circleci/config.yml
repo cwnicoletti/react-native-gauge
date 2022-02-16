@@ -82,12 +82,6 @@ workflows:
       - build_example_windows:
           requires:
             - verify
-      - rn/android_build:
-          name: build_android_debug
-          project_path: "example/android"
-          build_type: debug
-          requires:
-            - verify
       - build_example_ios:
           requires:
             - verify
