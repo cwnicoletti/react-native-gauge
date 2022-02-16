@@ -1,4 +1,4 @@
-version: 0.1
+version: 2.1
 
 orbs:
   rn: react-native-community/react-native@6.1.0
