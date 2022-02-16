@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - node/install:
-          install-yarn: true
+          install-yarn: false
           node-version: '16.13'
       - run: node --version
       - run:
