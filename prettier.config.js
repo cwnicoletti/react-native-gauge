@@ -3,4 +3,5 @@ module.exports = {
   bracketSpacing: false,
   jsxBracketSameLine: true,
   parser: 'flow',
+  singleQuote: true,
 };
