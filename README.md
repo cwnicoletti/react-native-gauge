@@ -2,18 +2,11 @@
   <h1 align="center"> <code>react-native-gauge</code> </h1>
 </p>
 <p align="center">
-    <a href="https://www.npmjs.com/package/@react-native-community/slider">
-        <img src="https://img.shields.io/npm/v/react-native-gauge" alt="Latest version released on npmjs" />
-    </a>
-    <a href="https://github.com/callstack/react-native-slider">
-        <img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Supported platforms" />
-    </a>
-    <a href="https://github.com/cwnicoletti/react-native-gauge/blob/main/LICENSE">
-        <img src="https://img.shields.io/npm/l/@react-native-community/slider.svg" alt="License" />
-    </a>
-    <a href="https://github.com/cwnicoletti/react-native-gauge/pulls">
-        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prswelcome" />
-    </a>
+    <a href="https://www.npmjs.com/package/react-native-gauge"><img src="https://img.shields.io/npm/v/react-native-gauge" alt="Latest version released on npmjs" /></a>
+    <a href="https://www.npmjs.com/package/react-native-gauge"><img src="https://img.shields.io/circleci/build/github/cwnicoletti/react-native-gauge" alt="CircleCI build status" /></a>
+    <a href="https://www.npmjs.com/package/react-native-gauge"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Supported platforms" /></a>
+    <a href="https://github.com/cwnicoletti/react-native-gauge/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@react-native-community/slider.svg" alt="License" /></a>
+    <a href="https://github.com/cwnicoletti/react-native-gauge/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prswelcome" /></a>
 </p>
 <p align="center">
   React Native component used to display a gauge for metrics or purely aesthetic purposes 
