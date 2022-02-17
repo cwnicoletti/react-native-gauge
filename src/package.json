@@ -36,7 +36,7 @@
     "@react-native-masked-view/masked-view": "^0.2.6",
     "expo-linear-gradient": "^11.0.3",
     "react-native-anchor-point": "^1.0.6",
-    "react-native-progress": "github:cwnicoletti/react-native-progress",
+    "react-native-progress": "git+https://github.com/cwnicoletti/react-native-progress.git",
     "react-native-svg": "^12.1.1"
   }
 }

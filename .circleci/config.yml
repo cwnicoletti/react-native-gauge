@@ -14,7 +14,7 @@ jobs:
       - run: node --version
       - run:
           name: Update NPM
-          command: "sudo npm install -g npm"
+          command: "sudo npm install -g npm@latest"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
