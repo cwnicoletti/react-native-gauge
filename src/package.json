@@ -9,7 +9,6 @@
     "access": "public"
   },
   "main": "dist/Gauge.js",
-  "types": "typings/index.d.ts",
   "keywords": [
     "react-native",
     "react native",
