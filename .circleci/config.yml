@@ -10,7 +10,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: false
-          node-version: '17.5'
+          node-version: '16.14'
       - run: node --version
       - run:
           name: Update NPM
