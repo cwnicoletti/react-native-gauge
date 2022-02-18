@@ -19,12 +19,12 @@
     "prepare-publish": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "*"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.2",
+    "babel-jest": "^27.5.1",
     "metro-react-native-babel-preset": "^0.56.0"
   },
   "repository": {
