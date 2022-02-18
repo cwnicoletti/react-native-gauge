@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gauge /> renders a gauge with custom props 1`] = `
+<View>
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "transform": Array [
+            Object {
+              "rotate": "-90deg",
+            },
+          ],
+        },
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={40}
+      bbWidth={40}
+      collapsable={false}
+      focusable={false}
+      height={40}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {},
+          Object {
+            "flex": 0,
+            "height": 40,
+            "width": 40,
+          },
+        ]
+      }
+      width={40}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M24.94427190999916 35.21690426072246
+          A16 16 0 0 1 10.595435963320426 7.055728090000843"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4286611584}
+          strokeLinecap={0}
+          strokeWidth={6}
+        />
+        <RNSVGPath
+          d="M20 4
+          A16 16 0 0 1 24.94427190999916 35.21690426072246"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4278190335}
+          strokeLinecap={0}
+          strokeWidth={6}
+        />
+        <RNSVGPath
+          d="M20 0.5
+          A19.5 19.5 0 1 1 8.53818758029677 4.224168609688526"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4278190335}
+          strokeLinecap={0}
+          strokeWidth={1}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "blue",
+          "borderBottomColor": "blue",
+          "borderBottomWidth": 0,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 0,
+          "borderRadius": 0,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopWidth": 0,
+          "height": 45,
+          "position": "absolute",
+          "top": -25,
+          "transform": Array [
+            Object {
+              "translateY": 22.5,
+            },
+            Object {
+              "rotateZ": 2.827433388230814,
+            },
+            Object {
+              "translateY": -22.5,
+            },
+          ],
+          "width": 2,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`<Gauge /> renders enabled gauge 1`] = `
+<View>
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "transform": Array [
+            Object {
+              "rotate": "-90deg",
+            },
+          ],
+        },
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={30}
+      bbWidth={30}
+      collapsable={false}
+      focusable={false}
+      height={30}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {},
+          Object {
+            "flex": 0,
+            "height": 30,
+            "width": 30,
+          },
+        ]
+      }
+      width={30}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M18.399186938124423 25.46162167924669
+          A11 11 0 0 1 8.534362224782793 6.100813061875579"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4286611584}
+          strokeLinecap={0}
+          strokeWidth={6}
+        />
+        <RNSVGPath
+          d="M15 4
+          A11 11 0 0 1 18.399186938124423 25.46162167924669"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4278190335}
+          strokeLinecap={0}
+          strokeWidth={6}
+        />
+        <RNSVGPath
+          d="M15 0.5
+          A14.5 14.5 0 1 1 6.477113841759136 3.269253581563264"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4278190335}
+          strokeLinecap={0}
+          strokeWidth={1}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+    <View
+      collapsable={false}
+      style={
+        Object {
+          "backgroundColor": "blue",
+          "borderBottomColor": "blue",
+          "borderBottomWidth": 0,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 0,
+          "borderRadius": 0,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 0,
+          "borderStyle": "solid",
+          "borderTopWidth": 0,
+          "height": 45,
+          "position": "absolute",
+          "top": -30,
+          "transform": Array [
+            Object {
+              "translateY": 22.5,
+            },
+            Object {
+              "rotateZ": 2.827433388230814,
+            },
+            Object {
+              "translateY": -22.5,
+            },
+          ],
+          "width": 2,
+        }
+      }
+    />
+  </View>
+</View>
+`;
