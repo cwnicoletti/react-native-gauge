@@ -1,5 +1,4 @@
 import React, {useRef} from 'react';
-
 import {Animated, Platform, StyleSheet, View} from 'react-native';
 import * as Progress from 'react-native-progress';
 import MaskedView from '@react-native-masked-view/masked-view';
