@@ -13,8 +13,7 @@
 <p align="center">
   <img width=300 src="https://user-images.githubusercontent.com/56566033/153973217-a1f4cc50-a53b-4946-8d1f-0403fe018e64.gif" alt="gauge gif" />
  </p>
- 
- 
+
 Installation & Usage
 --------------------
 
