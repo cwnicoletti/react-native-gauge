@@ -5,7 +5,6 @@
     <a href="https://www.npmjs.com/package/react-native-gauge"><img src="https://img.shields.io/npm/v/react-native-gauge" alt="Latest version released on npmjs" /></a>
     <a href="https://app.circleci.com/pipelines/github/cwnicoletti/react-native-gauge"><img src="https://img.shields.io/circleci/build/github/cwnicoletti/react-native-gauge" alt="CircleCI Build Status" /></a>
     <a href="https://app.codacy.com/gh/cwnicoletti/react-native-gauge/dashboard?branch=main"><img src="https://img.shields.io/codacy/grade/ea132b46de7f4194b2eb8f3b6f5d0d85" alt="Codacy Grade" /></a>
-    <img src="https://img.shields.io/github/repo-size/cwnicoletti/react-native-gauge" alt="Repo Size" class=myImage>
     <img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Supported platforms" />
 </p>
 <p align="center">
