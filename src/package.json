@@ -22,10 +22,8 @@
     "react": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.0",
-    "@babel/core": "^7.17.2",
-    "babel-jest": "^27.5.1",
-    "metro-react-native-babel-preset": "^0.56.0"
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.5"
   },
   "repository": {
     "type": "git",
