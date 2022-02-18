@@ -15,7 +15,8 @@
  </p>
  
  
-## Installation & Usage
+Installation & Usage
+--------------------
 
 To install this module `cd` to your project directory and enter the following command:
 ```
@@ -41,7 +42,8 @@ import Gauge from "react-native-gauge";
 />
 ```
 
-## Properties
+Properties
+----------
 
 | Prop                                 | Description                                                                  | Default                |
 | ------------------------------------ | ---------------------------------------------------------------------------- | ---------------------- |
