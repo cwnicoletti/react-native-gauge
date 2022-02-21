@@ -16,7 +16,9 @@
   ],
   "scripts": {
     "prepare": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset",
-    "prepare-publish": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish"
+    "prepare-publish-latest": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish",
+    "prepare-publish-stable": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish --tag stable",
+    "prepare-publish-beta": "babel --out-dir dist js --presets=module:metro-react-native-babel-preset && npm publish --tag beta"
   },
   "peerDependencies": {
     "react": "*"
