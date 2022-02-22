@@ -72,3 +72,20 @@ Properties
 | **`unfilledColor`**                  | Determines the unfilled portion of the circle/arc's color                    | `grey`                 |
 | **`circleColor`**                    | Determines the circle/arc's color                                            | `blue`                 |
 | **`triangleTipColor`**               | Determines the triangle tip color                                            | `blue`                 |
+
+Testing your code
+-----------------
+
+Before making a pull request, run: `npm run test` in the root directory
+
+Testing is supported by [jest](https://jestjs.io/) and test files (".test.js") can be found in "\_\_tests\_\_" directories
+
+Testing also checks for formatting through the tool [ESLint](https://eslint.org/) and enforces the coding style of [Prettier](https://prettier.io/) specified in the [Prettier config file](https://github.com/cwnicoletti/react-native-gauge/blob/main/prettier.config.js).
+
+On top of that testing also runs through a static type checker called [Flow](https://flow.org/). 
+
+All of these tests can be ran locally, but with every commit, [CircleCI](https://circleci.com/product/) will automatically run these tests in a clean container for you.
+
+Contributions
+-------------
+All contributions should be referenced to the [CONTRIBUTIONS](https://github.com/cwnicoletti/react-native-gauge/blob/main/CONTRIBUTING.md) file before making a pull request.
