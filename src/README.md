@@ -72,3 +72,4 @@ Properties
 | **`unfilledColor`**                  | Determines the unfilled portion of the circle/arc's color                    | `grey`                 |
 | **`circleColor`**                    | Determines the circle/arc's color                                            | `blue`                 |
 | **`triangleTipColor`**               | Determines the triangle tip color                                            | `blue`                 |
+| **`gradientStyle`**                  | Style the gradient mask, if there is an overallGradient                      | `{}`                   |
