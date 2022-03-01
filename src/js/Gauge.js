@@ -38,6 +38,7 @@ const Gauge = (props) => {
     unfilledColor,
     circleColor,
     triangleTipColor,
+    gradientStyle,
   } = props;
 
   const prevCountRef = useRef();
@@ -147,6 +148,7 @@ const Gauge = (props) => {
             <LinearGradient
               colors={overallGradient}
               style={{
+                ...gradientStyle,
                 height: size,
                 width: size,
               }}
@@ -256,6 +258,7 @@ Gauge.defaultProps = {
   unfilledColor: 'grey',
   circleColor: 'blue',
   triangleTipColor: 'blue',
+  gradientStyle: {},
 };
 
 let styles;
