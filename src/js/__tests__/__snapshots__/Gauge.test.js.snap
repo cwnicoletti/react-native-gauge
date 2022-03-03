@@ -111,7 +111,7 @@ exports[`<Gauge /> renders a gauge with custom props 1`] = `
               "translateY": 22.5,
             },
             Object {
-              "rotateZ": 2.827433388230814,
+              "rotate": "162.0000013767273deg",
             },
             Object {
               "translateY": -0,
@@ -239,7 +239,7 @@ exports[`<Gauge /> renders enabled gauge 1`] = `
               "translateY": 22.5,
             },
             Object {
-              "rotateZ": 2.827433388230814,
+              "rotate": "162.0000013767273deg",
             },
             Object {
               "translateY": -0,
