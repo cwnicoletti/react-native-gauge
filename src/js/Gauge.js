@@ -48,7 +48,7 @@ const Gauge = (props) => {
 
   const circleProgressInDegrees =
     progress * CIRCLE * unfilledEndAngle * 57.29578;
-    
+
   const prevProgressRef = useRef();
   useDidMountEffect(() => {
     if (animated) {
