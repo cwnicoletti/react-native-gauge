@@ -46,21 +46,34 @@ const Gauge = (props) => {
     gradientStyle,
   } = props;
 
-  const prevCountRef = useRef();
+  const circleProgressInDegrees =
+    progress * CIRCLE * unfilledEndAngle * 57.29578;
+    
+  const prevProgressRef = useRef();
   useDidMountEffect(() => {
     if (animated) {
-      prevCountRef.current = progress * CIRCLE * unfilledEndAngle;
+      prevProgressRef.current = circleProgressInDegrees;
       moveNeedleFn();
     }
   }, [progress, unfilledEndAngle]);
 
-  const moveNeedle = useRef(
-    new Animated.Value(progress * CIRCLE * unfilledEndAngle),
-  ).current;
+  const needleAnim = useRef(new Animated.Value(0)).current;
+
+  const rotateNeedle = needleAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [
+      `${
+        prevProgressRef.current
+          ? prevProgressRef.current
+          : circleProgressInDegrees
+      }deg`,
+      `${circleProgressInDegrees}deg`,
+    ],
+  });
 
   const moveNeedleFn = () => {
-    Animated.spring(moveNeedle, {
-      toValue: progress * CIRCLE * unfilledEndAngle,
+    Animated.spring(needleAnim, {
+      toValue: 1,
       bounciness: 0,
       useNativeDriver: true,
     }).start();
@@ -113,7 +126,11 @@ const Gauge = (props) => {
                     withAnchorPoint(
                       {
                         transform: [
-                          {rotateZ: moveNeedle},
+                          {
+                            rotate: prevProgressRef.current
+                              ? rotateNeedle
+                              : `${circleProgressInDegrees}deg`,
+                          },
                           {translateY: -translateNeedleY},
                         ],
                       },
@@ -170,7 +187,13 @@ const Gauge = (props) => {
                       width: circleSize,
                       borderRadius: circleSize / 2,
                       backgroundColor: circleColor,
-                      transform: [{rotateZ: moveNeedle}],
+                      transform: [
+                        {
+                          rotate: prevProgressRef.current
+                            ? rotateNeedle
+                            : `${circleProgressInDegrees}deg`,
+                        },
+                      ],
                     }}
                   />
                 )}
@@ -221,7 +244,11 @@ const Gauge = (props) => {
               withAnchorPoint(
                 {
                   transform: [
-                    {rotateZ: moveNeedle},
+                    {
+                      rotate: prevProgressRef.current
+                        ? rotateNeedle
+                        : `${circleProgressInDegrees}deg`,
+                    },
                     {translateY: -translateNeedleY},
                   ],
                 },
@@ -257,7 +284,13 @@ const Gauge = (props) => {
                 width: circleSize,
                 borderRadius: circleSize / 2,
                 backgroundColor: circleColor,
-                transform: [{rotateZ: moveNeedle}],
+                transform: [
+                  {
+                    rotate: prevProgressRef.current
+                      ? rotateNeedle
+                      : `${circleProgressInDegrees}deg`,
+                  },
+                ],
               }}
             />
           )}
