@@ -22,6 +22,9 @@ const Gauge = (props) => {
     triangleNeedle,
     addCircle,
     circleSize,
+    addTriangleBase,
+    triangleBaseWidth,
+    triangleBaseHeight,
     alwaysUseEndAngle,
     endAngle,
     unfilledEndAngle,
@@ -38,6 +41,7 @@ const Gauge = (props) => {
     unfilledColor,
     circleColor,
     triangleTipColor,
+    triangleBaseColor,
     gradientStyle,
   } = props;
 
@@ -106,7 +110,12 @@ const Gauge = (props) => {
                       borderBottomColor: needleColor,
                     },
                     withAnchorPoint(
-                      {transform: [{rotateZ: moveNeedle}]},
+                      {
+                        transform: [
+                          {rotateZ: moveNeedle},
+                          {translateY: -translateNeedleY},
+                        ],
+                      },
                       {x: 0.5, y: 1},
                       {
                         width: needleWidth,
@@ -127,6 +136,23 @@ const Gauge = (props) => {
                         borderLeftWidth: triangleTipWidth,
                         borderRightWidth: triangleTipWidth,
                         borderBottomWidth: triangleTipHeight,
+                      }}
+                    />
+                  )}
+                  {addTriangleBase && (
+                    <Animated.View
+                      style={{
+                        position: 'absolute',
+                        alignSelf: 'center',
+                        top: triangleBaseHeight + needleHeight / 2,
+                        borderTopWidth: 0,
+                        borderStyle: 'solid',
+                        borderLeftColor: 'transparent',
+                        borderRightColor: 'transparent',
+                        borderBottomColor: triangleBaseColor,
+                        borderLeftWidth: triangleBaseWidth,
+                        borderRightWidth: triangleBaseWidth,
+                        borderBottomWidth: triangleBaseHeight,
                       }}
                     />
                   )}
@@ -188,7 +214,12 @@ const Gauge = (props) => {
                 borderBottomColor: needleColor,
               },
               withAnchorPoint(
-                {transform: [{rotateZ: moveNeedle}]},
+                {
+                  transform: [
+                    {rotateZ: moveNeedle},
+                    {translateY: -translateNeedleY},
+                  ],
+                },
                 {x: 0.5, y: 1},
                 {
                   width: needleWidth,
@@ -241,6 +272,9 @@ Gauge.defaultProps = {
   triangleNeedle: false,
   addCircle: false,
   circleSize: 15,
+  addTriangleBase: false,
+  triangleBaseWidth: 5,
+  triangleBaseHeight: 20,
   animated: true,
   alwaysUseEndAngle: true,
   endAngle: 0.9,
@@ -258,6 +292,7 @@ Gauge.defaultProps = {
   unfilledColor: 'grey',
   circleColor: 'blue',
   triangleTipColor: 'blue',
+  triangleBaseColor: 'blue',
   gradientStyle: {},
 };
 
