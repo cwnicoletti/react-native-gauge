@@ -11,7 +11,7 @@
   React Native component used to display a gauge for metrics or purely aesthetic purposes 
 </p>
 <p align="center">
-  <img width=300 src="https://user-images.githubusercontent.com/56566033/153973217-a1f4cc50-a53b-4946-8d1f-0403fe018e64.gif" alt="gauge gif" />
+  <img width=300 src="https://user-images.githubusercontent.com/56566033/157319771-9a289533-5883-4f5a-9bf0-de2bfd74a433.gif" alt="gauge gif" />
  </p>
 
 Installation & Usage
