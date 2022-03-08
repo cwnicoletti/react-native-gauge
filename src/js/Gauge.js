@@ -144,7 +144,7 @@ const Gauge = (props) => {
                       style={{
                         position: 'absolute',
                         alignSelf: 'center',
-                        top: triangleBaseHeight + needleHeight / 2,
+                        top: triangleBaseHeight + needleHeight / 2 - 1,
                         borderTopWidth: 0,
                         borderStyle: 'solid',
                         borderLeftColor: 'transparent',
