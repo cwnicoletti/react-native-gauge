@@ -54,7 +54,10 @@ Properties
 | **`triangleTipHeight`**              | Height of the triangle tip                                                   | `4`                    |
 | **`triangleNeedle`**                 | Turns the needle into a triangle                                             | `false`                |
 | **`addCircle`**                      | Adds a circle to the middle of the circle/arc                                | `false`                |
-| **`circleSize`**                     | Size of the cricle                                                           | `15`                   |
+| **`circleSize`**                     | Size of the circle                                                           | `15`                   |
+| **`addTriangleBase`**                | Adds a triangle to the bottom of the needle                                  | `false`                |
+| **`triangleBaseWidth`**              | Width of the triangle base                                                   | `5`                    |
+| **`triangleBaseHeight`**             | Height of the triangle base                                                  | `20`                   |
 | **`animated`**                       | Boolean stating whether to make the gauge animated                           | `true`                 |
 | **`alwaysUseEndAngle`**              | Enables the border end angle to be adjusted (hack around Progress component) | `true`                 |
 | **`endAngle`**                       | Determines the end angle (just for the border for right now)                 | `0.9`                  |
@@ -72,6 +75,7 @@ Properties
 | **`unfilledColor`**                  | Determines the unfilled portion of the circle/arc's color                    | `grey`                 |
 | **`circleColor`**                    | Determines the circle/arc's color                                            | `blue`                 |
 | **`triangleTipColor`**               | Determines the triangle tip color                                            | `blue`                 |
+| **`triangleBaseColor`**              | Determines the triangle base color                                           | `blue`                 |
 | **`gradientStyle`**                  | Style the gradient mask, if there is an overallGradient                      | `{}`                   |
 
 Testing your code
