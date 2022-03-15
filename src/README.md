@@ -58,6 +58,7 @@ Properties
 | **`addTriangleBase`**                | Adds a triangle to the bottom of the needle                                  | `false`                |
 | **`triangleBaseWidth`**              | Width of the triangle base                                                   | `5`                    |
 | **`triangleBaseHeight`**             | Height of the triangle base                                                  | `20`                   |
+| **`translateBaseY`**                 | Moves the base shape up/down relative to the base of the needle              | `0`                    |
 | **`animated`**                       | Boolean stating whether to make the gauge animated                           | `true`                 |
 | **`alwaysUseEndAngle`**              | Enables the border end angle to be adjusted (hack around Progress component) | `true`                 |
 | **`endAngle`**                       | Determines the end angle (just for the border for right now)                 | `0.9`                  |
