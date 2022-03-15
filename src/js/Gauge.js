@@ -25,6 +25,7 @@ const Gauge = (props) => {
     addTriangleBase,
     triangleBaseWidth,
     triangleBaseHeight,
+    translateBaseY,
     alwaysUseEndAngle,
     endAngle,
     unfilledEndAngle,
@@ -144,7 +145,11 @@ const Gauge = (props) => {
                       style={{
                         position: 'absolute',
                         alignSelf: 'center',
-                        top: triangleBaseHeight + needleHeight / 2 - 1,
+                        top:
+                          triangleBaseHeight +
+                          needleHeight / 2 -
+                          1 -
+                          translateBaseY,
                         borderTopWidth: 0,
                         borderStyle: 'solid',
                         borderLeftColor: 'transparent',
@@ -275,6 +280,7 @@ Gauge.defaultProps = {
   addTriangleBase: false,
   triangleBaseWidth: 5,
   triangleBaseHeight: 20,
+  translateBaseY: 0,
   animated: true,
   alwaysUseEndAngle: true,
   endAngle: 0.9,
